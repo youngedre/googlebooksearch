@@ -1,28 +1,26 @@
 {
   "name": "googlebooksearch",
-  "version": "0.1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/youngedre/googlebooksearch"
-  },
-  "description": "React-based app to search Google Books API",
-  "main": "server.js",
-  "engines": {
-    "node:": "10.15.3"
-  },
+  "version": "1.0.0",
+  "description": "Full Stack React App Demo",
+  "main": "server/server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
+    "start:prod": "node server/server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && run npm build",
-    "heroku-postbuild": "cd client && npm run build"
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "engines": {
+    "node": "12.10.x",
+    "npm": "6.11.x",
+    "yarn": "1.19.x"
   },
   "author": "William Whitted",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "concurrently": "^4.1.2",
+    "concurrently": "^5.0.0",
     "nodemon": "^1.19.4"
   },
   "dependencies": {
